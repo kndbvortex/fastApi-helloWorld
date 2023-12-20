@@ -9,7 +9,7 @@ r = redis.Redis(host="redis", port=6379)
 @app.get("/")
 async def read_root():
     r.incr('hits')
-    return {"Hello", r.get("hits")}
+    return {"number of clicks", r.get("hits")}
     
 
 @app.get("/items/{item_id}")
